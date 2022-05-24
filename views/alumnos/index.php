@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'hAlign' => 'center',
                     'attribute' => 'alm_codigo',
                     'value' => function ($model, $key, $index, $widget) {
-                        return Html::tag('span', $model->alm_codigo, ['class' => 'badge bg-purple']);
+                        return Html::tag('span', 'AL- '.$model->alm_codigo, ['class' => 'badge bg-purple']);
                     },
                     'filter' => false,
                 ],
@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'vAlign' => 'middle',
                     'format' => 'html',
                     'value' => function ($model, $key, $index, $widget) {
-                        return Html::a($model->alm_nombres,  ['view', 'alm_codigo' => $model->alm_codigo]);
+                        return Html::a($model->alm_nombres. ' ' .$model->alm_apellidos,  ['view', 'alm_codigo' => $model->alm_codigo]);
                     },
                     'filterType' => GridView::FILTER_SELECT2,
                     'filter' => ArrayHelper::map(AlmAlumnos::find()->orderBy('alm_nombres')->all(), 'alm_nombres', 'alm_nombres'),
@@ -134,48 +134,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                     ],
                 ],
-                // [
-                //     'class' => 'kartik\grid\DataColumn',
-                //     'attribute' => 'car_fecha_ing',
-                //     'headerOptions' => ['class' => 'kv-sticky-column'],
-                //     'contentOptions' => ['class' => 'kv-sticky-column'],
-                //     'vAlign' => 'middle',
-                //     'hAlign' => 'right',
-                //     'width' => '250px',
-                //     'filterType' => GridView::FILTER_DATE,
-                //     'filterWidgetOptions' => ([
-                //         'model' => $dataProvider,
-                //         'attribute' => 'car_fecha_ing',
-                //         'convertFormat' => true,
-                //         'pluginOptions' => [
-                //             'format' => 'yyyy-M-dd',
-                //             'autoWidget' => true,
-                //             'autoclose' => true,
-                //             'todayHighlight' => true,
-                //         ],
-                //     ]),
-                // ],
-                // [
-                //     'class' => 'kartik\grid\DataColumn',
-                //     'attribute' => 'car_fecha_mod',
-                //     'headerOptions' => ['class' => 'kv-sticky-column'],
-                //     'contentOptions' => ['class' => 'kv-sticky-column'],
-                //     'vAlign' => 'middle',
-                //     'hAlign' => 'right',
-                //     'width' => '250px',
-                //     'filterType' => GridView::FILTER_DATE,
-                //     'filterWidgetOptions' => ([
-                //         'model' => $dataProvider,
-                //         'attribute' => 'car_fecha_mod',
-                //         'convertFormat' => true,
-                //         'pluginOptions' => [
-                //             'format' => 'yyyy-M-dd',
-                //             'autoWidget' => true,
-                //             'autoclose' => true,
-                //             'todayHighlight' => true,
-                //         ],
-                //     ]),
-                // ],
                 [
                     'class' => 'kartik\grid\ActionColumn',
                     'urlCreator' => function ($action, AlmAlumnos $model, $key, $index, $column) {

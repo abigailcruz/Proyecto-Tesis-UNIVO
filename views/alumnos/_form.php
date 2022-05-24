@@ -3,6 +3,7 @@
 use app\models\AlmAlumnos;
 use app\models\CarCarrera;
 use app\models\CilCiclo;
+use app\models\Grupo;
 use kartik\daterange\DateRangePicker;
 use kartik\widgets\ActiveForm;
 use kartik\widgets\DatePicker;
@@ -24,7 +25,7 @@ use yii\helpers\Html;
                     <div class="row">
                         <div class="col-md-6">
                             <?= Html::activeLabel($model, 'alm_codigo', ['class' => 'control-label']) ?>
-                            <?= $form->field($model, 'alm_codigo', ['showLabels' => false])->textInput(['autofocus' => true]) ?>
+                            <?= $form->field($model, 'alm_codigo', ['showLabels' => false])->textInput(['autofocus' => true, 'disabled' => 'disabled']) ?>
                         </div>
                         <div class="col-md-6">
                             <?= Html::activeLabel($model, 'alm_carnet', ['class' => 'control-label']) ?>
@@ -40,9 +41,9 @@ use yii\helpers\Html;
                             ]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= Html::activeLabel($model, 'alm_codcil', ['class' => 'control-label']) ?>
-                            <?= $form->field($model, 'alm_codcil', ['showLabels' => false])->widget(Select2::class, [
-                                'data' => ArrayHelper::map(CilCiclo::find()->all(), 'cil_codigo', 'cil_nombre'),
+                            <?= Html::activeLabel($model, 'alm_codgrp', ['class' => 'control-label']) ?>
+                            <?= $form->field($model, 'alm_codgrp', ['showLabels' => false])->widget(Select2::class, [
+                                'data' => ArrayHelper::map(Grupo::find()->all(), 'grp_codigo', 'grp_tema'),
                                 'language' => 'es',
                                 'options' => ['placeholder' => '- Seleccionar Categoria -'],
                                 'pluginOptions' => ['allowClear' => true],

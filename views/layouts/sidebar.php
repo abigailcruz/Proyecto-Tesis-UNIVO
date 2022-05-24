@@ -11,7 +11,7 @@ use yii\helpers\Url;
 <aside class="main-sidebar sidebar-dark-warning elevation-4" style="z-index: 1040 !important; background-color:#001529;">
     <!-- Brand Logo -->
     <a href="<?= Url::home() ?>" class="brand-link">
-        <img src="logo-univo.gif" alt="Logo" class="brand-image">
+        <img src="logo.png" alt="Logo" class="brand-image">
         </br>
     </a>
 
@@ -87,7 +87,7 @@ use yii\helpers\Url;
                 <!------- END TEMA DE TESIS ------->
 
                 <!------- ASESORES ------->
-                <?php if (Yii::$app->controller->id == 'asesor' && in_array(\Yii::$app->controller->action->id, ['index'])) {
+                <?php if (Yii::$app->controller->id == 'asesores' && in_array(\Yii::$app->controller->action->id, ['index'])) {
                     $li = "nav-item active";
                     $a = "nav-link active";
                 } else {
@@ -95,7 +95,7 @@ use yii\helpers\Url;
                     $a = "nav-link";
                 }
                 ?>
-                <li class="<?= $li; ?>"><a class="<?= $a; ?>" href="<?php echo Url::toRoute(['/asesor/index']); ?>"><i class="nav-icon fa fa-user"></i>
+                <li class="<?= $li; ?>"><a class="<?= $a; ?>" href="<?php echo Url::toRoute(['/asesores/index']); ?>"><i class="nav-icon fa fa-user"></i>
                         <p>Asesores</p>
                     </a></li>
                 <!------- END ASESORES ------->
@@ -190,7 +190,7 @@ use yii\helpers\Url;
                 <!------- FIN MENU USUARIOS ------->
 
                 <!------- GRUPOS DE TESIS ------->
-                <?php if (Yii::$app->controller->id == 'grupoTesis' && in_array(\Yii::$app->controller->action->id, ['index'])) {
+                <?php if (Yii::$app->controller->id == 'grupo' && in_array(\Yii::$app->controller->action->id, ['index'])) {
                     $li = "nav-item active";
                     $a = "nav-link active";
                 } else {
@@ -198,7 +198,7 @@ use yii\helpers\Url;
                     $a = "nav-link";
                 }
                 ?>
-                <li class="<?= $li; ?>"><a class="<?= $a; ?>" href="<?php echo Url::toRoute(['/grupoTesis/index']); ?>"><i class="nav-icon fa fa-users"></i>
+                <li class="<?= $li; ?>"><a class="<?= $a; ?>" href="<?php echo Url::toRoute(['/grupo/index']); ?>"><i class="nav-icon fa fa-users"></i>
                         <p>Grupo de tesis</p>
                     </a></li>
                 <!------- END GRUPOS DE TESIS ------->
